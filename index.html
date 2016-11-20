@@ -35,7 +35,7 @@
       font-family: Helvetica, Arial;
     }
  
-    .backdrop
+    /*.backdrop
     {
       position:absolute;
       top:0px;
@@ -75,35 +75,83 @@
       margin-right:6px;
       cursor:pointer;
     }
- 
+*/
+
+    /* js lightbox */
+
+.lightbox {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.lightbox:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.close {
+  background: black;
+  color: #fff;
+  line-height: 25px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: auto;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.close:hover {
+  background: red;
+}
     </style>
  
     <script type="text/javascript">
  
-      $(document).ready(function(){
+      // $(document).ready(function(){
  
-        $('.lightbox').click(function(){
-          $('.backdrop, .box').animate({'opacity':'.50'}, 300, 'linear');
-          $('.box').animate({'opacity':'1.00'}, 300, 'linear');
-          $('.backdrop, .box').css('display', 'block');
-        });
+      //   $('.lightbox').click(function(){
+      //     $('.backdrop, .box').animate({'opacity':'.50'}, 300, 'linear');
+      //     $('.box').animate({'opacity':'1.00'}, 300, 'linear');
+      //     $('.backdrop, .box').css('display', 'block');
+      //   });
  
-        $('.close').click(function(){
-          close_box();
-        });
+      //   $('.close').click(function(){
+      //     close_box();
+      //   });
  
-        $('.backdrop').click(function(){
-          close_box();
-        });
+      //   $('.backdrop').click(function(){
+      //     close_box();
+      //   });
  
-      });
+      // });
  
-      function close_box()
-      {
-        $('.backdrop, .box').animate({'opacity':'0'}, 300, 'linear', function(){
-          $('.backdrop, .box').css('display', 'none');
-        });
-      }
+      // function close_box()
+      // {
+      //   $('.backdrop, .box').animate({'opacity':'0'}, 300, 'linear', function(){
+      //     $('.backdrop, .box').css('display', 'none');
+      //   });
+      // }
  
     </script>
  
@@ -141,36 +189,152 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center" style="display: block;margin-top:15px;">
-          <a href="http://kabbalahsanfrancisco.com" target="_blank">   <img src="img/bbsf-LOGO-tree-BG-repeat.png" style="float: left;width: 30%"></a>
-          <a href="http://eepurl.com/bmlr6T" target="_blank">  <img src="img/newsletter-SU.png" style="float: right;width: 20%;margin-right:65px;"> </a>
+           <div> <a href="http://kabbalahsanfrancisco.com" target="_blank">   <img src="https://gallery.mailchimp.com/47653ca2343a61be17b5460de/images/a26a242b-b960-4ea4-a4a4-7df0f2da2c60.png
+" style="float: left;width: 30px;margin-left:20px"><span style="color:white;font-size:30px;font-family:times new roman;float:left;margin-left:15px;">Bnei Baruch Education Center of San Francisco</span></a></div>
+          <!-- <a href="http://kabbalahsanfrancisco.com" target="_blank">   <img src="img/bbsf-LOGO-tree-BG-repeat.png" style="float: left;width: 30%"></a> -->
+           <a href="http://eepurl.com/bmlr6T" target="_blank"><div class="btn btn-dark btn-lg" style="margin:10px;">Sign up for Our Newsletter <br /> Receive a Free E-book</div></a>
+          <!-- <a href="http://eepurl.com/bmlr6T" target="_blank">  <img src="img/newsletter-SU.png" style="float: right;width: 20%;margin-right:65px;"> </a> -->
             <!-- <h2 style="color:white; margin:55px 10px 5px 10px;font-size:36px;">Welcome to the Bnei Baruch Education Center of San Francisco - your home for local events</h2> -->
 <!--             <h3>Free Bootstrap Themes &amp; Templates</h3>
  -->            <br><br><br><br><br><br><br><br><br><br>
 
 
-<h2 style="color:#fff;font-size: 38px;">Connecting the San Francisco Bay Area Community<br /> with Authentic Kabbalah </h2>
-       <!--   <a href="#" class="lightbox"><input type="submit" value="Learn About Our Events" name="subscribe"  class="btn btn-dark btn-lg" style="margin:10px;"></a> -->
-          <a href="#" class="lightbox"><div class="btn btn-dark btn-lg" style="margin:10px;">Learn About Our Events  </div></a>
+<h2 style="color:#fff;font-size: 42px;font-family: Nirmala UI;">Connecting the San Francisco Bay Area Community<br> with Authentic Kabbalah </h2>       <!--   <a href="#" class="lightbox"><input type="submit" value="Learn About Our Events" name="subscribe"  class="btn btn-dark btn-lg" style="margin:10px;"></a> -->
+<h3 style="color:#490b92;font-size: 22px;font-family: Nirmala UI;">Learn About Our Events </h3>
+     <br />
+
+
  
-  <div class="backdrop"></div>
-  <div class="box">
-    <div class="close">x</div>
-    <h3>Live Events</h3><br />
-        <div ><a href="#">Kab Nights</a></div><br />
-        <div ><a href="#">Intro Lectures</a></div><br />
+<!--   <div class="backdrop"></div>
+ -->  
 
-        <div ><a href="#">Kabbalah Cafe</a></div><br />
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#kabnights">Kabbalah Nights</button>
 
-        <div ><a href="#">Campus</a></div><br />
+  <!-- Modal -->
+  <div class="modal fade" id="kabnights" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Kabbalah Nights</h4>
+        </div>
+        <div class="modal-body">
+          <p>Join us for a discussion of authentic Kabbalah, fellowship and snacks</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+       
 
-        <div ><a href="#">Make an Appointment to visit</a></div><br />
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#intro">Intro Lectures</button>
+  <!-- Modal -->
+  <div class="modal fade" id="intro" role="dialog">
+    <div class="modal-dialog">   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Intro Lectures</h4>
+        </div>
+        <div class="modal-body">
+          <p>Join us for an introductory lecture on authentic Kabbalah</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#campus">Campus</button>
+  <!-- Modal -->
+  <div class="modal fade" id="campus" role="dialog">
+    <div class="modal-dialog">   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Attend our Campus</h4>
+        </div>
+        <div class="modal-body">
+          <p>10 weeks classes surveying fundamentals of Kabbalah</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <div ><a href="#">Open House</a></div><br />
+  
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#cafe">Kabbalah Cafe</button>
+  <!-- Modal -->
+  <div class="modal fade" id="cafe" role="dialog">
+    <div class="modal-dialog">   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Kabbalah Cafe</h4>
+        </div>
+        <div class="modal-body">
+          <p>Come on a Saturday and enjoy a round table discussion and meal with us</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#visit">Visit in Person</button>
+  <!-- Modal -->
+  <div class="modal fade" id="visit" role="dialog">
+    <div class="modal-dialog">   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Visit in Person</h4>
+        </div>
+        <div class="modal-body">
+          <p>Call us and make an appointment to visit us in person, attend a lesson, or just ask questions !</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</div>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#open">Open House</button>
+  <!-- Modal -->
+  <div class="modal fade" id="open" role="dialog">
+    <div class="modal-dialog">   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Open House</h4>
+        </div>
+        <div class="modal-body">
+          <p>Drop by the Center to learn about what we do here and events you can attend</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
+  
  <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -230,7 +394,7 @@
                     <h2>Our mission is to educate, connect and inspire to bring positive personal and social change through the ancient wisdom of Kabbalah.</h2>
                     <p class="lead">For almost 20 years Bnei Baruch San Francisco has been an authentic Kabbalah study center for people of all backgrounds and levels of advancement.
 
-                        Free live online interactive courses are taught by Bnei Baruch certified instructors to help new students learn foundations of authentic Kabbalah. Check out <a target="_blank" href="http://edu.kabbalah.info/">Kabbalah Education Center website</a> for more information and schedules.</p> 
+                        Free live online interactive courses are taught by Bnei Baruch certified instructors to help new students learn foundations of authentic Kabbalah. Check out <a target="_blank" href="http://kabbalahsanfrancisco.com/">Bnei Baruch Education Center of San Francisco website</a> for more information and schedules.</p> 
                         
                 </div>
             </div>
@@ -287,7 +451,7 @@
                         <br>San Francisco, CA 94131</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (415) 469 - 9394</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">bbsf@kabbalah.info</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:bbsf@kabbalah.info">bbsf@kabbalah.info</a>
                         </li>
                     </ul>
                     <br>
