@@ -28,6 +28,15 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+   <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover({
+                placement : 'top',
+                trigger : 'hover'
+            });
+        });
+    </script>
+
     <style type="text/css">
  
         
@@ -118,7 +127,9 @@
 <!--   <div class="backdrop"></div>
  -->  
 
-  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#kabnights">Kabbalah Nights</button>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="popover" title="Kabbalah Nights" data-content="Join us for a discussion of authentic Kabbalah, fellowship and snacks" data-target="#kabnights" data-trigger="hover">Kabbalah Nights</button>
+
+  <span> &nbsp;</span>
 
   <!-- Modal -->
   <div class="modal fade" id="kabnights" role="dialog">
@@ -143,7 +154,8 @@
   
        
 
-  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#intro">Intro Lectures</button>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="popover" title="Intro Lectures" data-content="Join us for an introductory lecture on authentic Kabbalah"  data-target="#intro">Intro Lectures</button>
+    <span> &nbsp;</span>
   <!-- Modal -->
   <div class="modal fade" id="intro" role="dialog">
     <div class="modal-dialog">   
@@ -163,7 +175,8 @@
     </div>
   </div>
   
-  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#campus">Campus</button>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="popover" title="Kabbalah Campus" data-content="10 weeks of classes surveying fundamentals of Kabbalah" data-target="#campus">Campus</button>
+    <span> &nbsp;</span>
   <!-- Modal -->
   <div class="modal fade" id="campus" role="dialog">
     <div class="modal-dialog">   
@@ -184,7 +197,8 @@
   </div>
 
   
-  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#cafe">Kabbalah Cafe</button>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="popover" title="Kabbalah Cafe" data-content="Come on a Saturday and enjoy a round table discussion and meal with us" data-target="#cafe">Kabbalah Cafe</button>
+   <span> &nbsp;</span>
   <!-- Modal -->
   <div class="modal fade" id="cafe" role="dialog">
     <div class="modal-dialog">   
@@ -204,7 +218,8 @@
     </div>
   </div>
 
-  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#visit">Visit in Person</button>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="popover" title="Visit in Person" data-content="Call us and make an appointment to visit us in person, attend a lesson, or just ask questions!" data-target="#visit">Visit in Person</button>
+   <span> &nbsp;</span>
   <!-- Modal -->
   <div class="modal fade" id="visit" role="dialog">
     <div class="modal-dialog">   
@@ -224,7 +239,8 @@
     </div>
   </div>
 
-  <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#open">Open House</button>
+  <button type="button" class="btn btn-dark btn-lg" data-toggle="popover" title="Open House" data-content="Drop by the Center to learn about what we do here and events you can attend" data-target="#open">Open House</button>
+   <span> &nbsp;</span>
   <!-- Modal -->
   <div class="modal fade" id="open" role="dialog">
     <div class="modal-dialog">   
